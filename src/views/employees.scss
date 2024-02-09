@@ -1,0 +1,62 @@
+@import "../utils/variables.scss";
+
+.contain-employees {
+  margin-left: 2em;
+  margin-right: 2em;
+
+  .bloc-search {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1em;
+
+    .entries {
+      display: flex;
+      flex-direction: column;
+      label {
+	font-size: 13px;
+	padding-bottom: 5px;
+      }
+    }
+    #rows-per-page-select,
+    .MuiSelect-root {
+      font-size: 0.8rem;
+    }
+
+    #rows-per-page-label {
+      font-size: 0.8rem;
+    }
+
+    .MuiInputLabel-root {
+      font-size: 0.8rem;
+    }
+
+    .MuiInputBase-input {
+      font-size: 0.8rem;
+    }
+
+    .MuiTextField-root {
+      margin-right: 10px;
+    }
+
+    .MuiInputLabel-root {
+      line-height: 1.5;
+    }
+
+    .MuiInputBase-input {
+      padding-top: 10px;
+    }
+  }
+
+  .title {
+    font-size: 20px;
+    padding-top: 1em;
+    text-align: center;
+    color: $color-white;
+  }
+
+  .p-results{
+    font-size: 12px;
+  }
+}

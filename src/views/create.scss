@@ -1,0 +1,104 @@
+
+$primary-color: #92aa96;
+
+body {
+  background-color: $primary-color;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+      "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  min-width: 330px;
+}
+
+#container {
+  margin: 0 auto;
+  margin-top: 2em;
+  border-radius: 30px;
+  width: 90%;
+  max-width: 900px;
+  padding-top: 20px;
+  background-color: white;
+  
+  .infos-user, .adress-user {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 20px;
+    text-align: center;
+  }
+}
+
+h2 {
+  font-size: 15px;
+  margin-bottom: 1em;
+}
+
+#form_create {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  
+
+  .formulaire {
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+
+    .separator {
+      width: 1%;
+      background-color: $primary-color;
+      margin-bottom: 2em;
+    }
+  }
+}
+
+.input, .dates, .bloc_adress {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-bottom: 1.5em;
+
+  input {
+    border: 1px solid rgb(220, 220, 220);
+    border-radius: 5px;
+    padding: 8px;
+  }
+
+  label {
+    font-size: 12px;
+  }
+}
+
+.dates {
+  .css-z3c6am-MuiFormControl-root-MuiTextField-root {
+    width: 100%;
+  }
+
+  .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root .css-nxo287-MuiInputBase-input-MuiOutlinedInput-input {
+    padding: 8px;
+    font-size: 12px;
+  }
+}
+
+.bloc_adress {
+  .css-1fdsijx-ValueContainer {
+    font-size: 12px;
+  }
+
+  .css-13cymwt-control {
+    font-size: 12px;
+  }
+}
+
+.button {
+  display: block;
+  margin: auto;
+  border-radius: 5px;
+  width: 20%;
+  padding: 10px 5px 10px 5px;
+  background-color: $primary-color;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
