@@ -108,122 +108,130 @@ const EmployeeForm = () => {
     employees.push(employee);
     localStorage.setItem("employees", JSON.stringify(employees));
     setConfirmationModal(true);
+
+    // Rediriger vers la route '/' après 2 secondes
+    setTimeout(() => {
+      setConfirmationModal(false);
+      window.location.href = "/";
+    }, 1000);
   };
-
   return (
-	<>
-	<Header />
-    <div id="container">
-      <h1>Create Employee</h1>
-      <form id="form_create">
-        <div className="formulaire">
-          <div className="infos-user">
-            <h2>Informations</h2>
-            <div className="input">
-              <label htmlFor="first-name">First Name</label>
-              <input
-                type="text"
-                id="first-name"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-              />
-            </div>
-            <div className="input">
-              <label htmlFor="last-name">Last Name</label>
-              <input
-                type="text"
-                id="last-name"
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
-              />
-            </div>
-            <div className="dates">
-              <label htmlFor="date-of-birth">Date of Birth</label>
-              <LocalizationProvider dateAdapter={AdapterDayjs}>
-                <DatePicker
-                  value={dateOfBirth ? dayjs(dateOfBirth) : null}
-                  onChange={(date) => setDateOfBirth(date)}
+    <>
+      <Header />
+      <div id="container">
+        <h1>Create Employee</h1>
+        <form id="form_create">
+          <div className="formulaire">
+            <div className="infos-user">
+              <h2>Informations</h2>
+              <div className="input">
+                <label htmlFor="first-name">First Name</label>
+                <input
+                  type="text"
+                  id="first-name"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
                 />
-              </LocalizationProvider>
-            </div>
+              </div>
+              <div className="input">
+                <label htmlFor="last-name">Last Name</label>
+                <input
+                  type="text"
+                  id="last-name"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                />
+              </div>
+              <div className="dates">
+                <label htmlFor="date-of-birth">Date of Birth</label>
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                <DatePicker
+  value={dateOfBirth ? dayjs(dateOfBirth) : null}
+  onChange={(date) => setDateOfBirth(date)}
+  format="MM/DD/YYYY" // Ajoutez ceci pour afficher la date au format désiré
+/>
 
-            <div className="dates">
-              <label htmlFor="start-date">Start Date</label>
-              <LocalizationProvider dateAdapter={AdapterDayjs}>
+                </LocalizationProvider>
+              </div>
+
+              <div className="dates">
+                <label htmlFor="start-date">Start Date</label>
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DatePicker
-                  value={startDate ? dayjs(startDate) : null}
-                  onChange={(date) => setStartDate(date)}
+  value={startDate ? dayjs(startDate) : null}
+  onChange={(date) => setStartDate(date)}
+  format="MM/DD/YYYY" // Ajoutez ceci pour afficher la date au format désiré
+/>
+
+                </LocalizationProvider>
+              </div>
+            </div>
+            <div className="separator"></div>
+
+            <div className="adress-user">
+              <h2>Address</h2>
+              <div className="bloc_adress">
+                <label htmlFor="street">Street</label>
+                <input
+                  id="street"
+                  type="text"
+                  value={street}
+                  onChange={(e) => setStreet(e.target.value)}
                 />
-              </LocalizationProvider>
+              </div>
+              <div className="bloc_adress">
+                <label htmlFor="city">City</label>
+                <input
+                  id="city"
+                  type="text"
+                  value={city}
+                  onChange={(e) => setCity(e.target.value)}
+                />
+              </div>
+              <div className="bloc_adress">
+                <label htmlFor="state">State</label>
+                <Select
+                  placeholder="Sélectionner..."
+                  options={stateOptions}
+                  value={{ label: state, value: state }}
+                  onChange={(selectedOption) => setState(selectedOption.value)}
+                />
+              </div>
+              <div className="bloc_adress">
+                <label htmlFor="zip-code">Zip Code</label>
+                <input
+                  id="zip-code"
+                  type="number"
+                  value={zipCode}
+                  onChange={(e) => setZipCode(e.target.value)}
+                />
+              </div>
+              <div className="bloc_adress">
+                <label htmlFor="department">Department</label>
+                <Select
+                  placeholder="Sélectionner..."
+                  options={departmentOptions}
+                  value={{ label: department, value: department }}
+                  onChange={(selectedOption) =>
+                    setDepartment(selectedOption.value)
+                  }
+                />
+              </div>
             </div>
           </div>
-	<div className="separator"></div>
+          <button type="button" className="button" onClick={saveEmployee}>
+            Save
+          </button>
 
-
-          <div className="adress-user">
-            <h2>Address</h2>
-            <div className="bloc_adress">
-              <label htmlFor="street">Street</label>
-              <input
-                id="street"
-                type="text"
-                value={street}
-                onChange={(e) => setStreet(e.target.value)}
-              />
-            </div>
-            <div className="bloc_adress">
-              <label htmlFor="city">City</label>
-              <input
-                id="city"
-                type="text"
-                value={city}
-                onChange={(e) => setCity(e.target.value)}
-              />
-            </div>
-            <div className="bloc_adress">
-              <label htmlFor="state">State</label>
-              <Select
-                placeholder="Sélectionner..."
-                options={stateOptions}
-                value={{ label: state, value: state }}
-                onChange={(selectedOption) => setState(selectedOption.value)}
-              />
-            </div>
-            <div className="bloc_adress">
-              <label htmlFor="zip-code">Zip Code</label>
-              <input
-                id="zip-code"
-                type="number"
-                value={zipCode}
-                onChange={(e) => setZipCode(e.target.value)}
-              />
-            </div>
-            <div className="bloc_adress">
-              <label htmlFor="department">Department</label>
-              <Select
-                placeholder="Sélectionner..."
-                options={departmentOptions}
-                value={{ label: department, value: department }}
-                onChange={(selectedOption) =>
-                  setDepartment(selectedOption.value)
-                }
-              />
-            </div>
-          </div>
-        </div>
-        <button type="button" className="button" onClick={saveEmployee}>
-          Save
-        </button>
-
-        <Modal
-          isOpen={confirmationModal}
-          onRequestClose={() => setConfirmationModal(false)}
-          contentLabel="Employee Created Modal"
-        >
-          <div className="modal">Employee Created!</div>
-        </Modal>
-      </form>
-    </div>
+          <Modal
+            isOpen={confirmationModal}
+            onRequestClose={() => setConfirmationModal(false)}
+            contentLabel="Employee Created Modal"
+          >
+            <div className="modal">Employee Created!</div>
+          </Modal>
+        </form>
+      </div>
     </>
   );
 };

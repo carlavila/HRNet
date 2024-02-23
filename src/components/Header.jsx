@@ -16,11 +16,11 @@ export default function Header() {
       <h1>HRnet</h1>
       <nav>
         {location.pathname === "/create" && (
-          <NavLink to="/employees">
+          <NavLink to="/">
             <span>Employees</span>
           </NavLink>
         )}
-        {location.pathname === "/employees" && (
+        {location.pathname === "/" && (
           <button
             type="button"
             className="button-create"
