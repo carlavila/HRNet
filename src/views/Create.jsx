@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import Select from "react-select";
 import Modal from "react-modal";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import dayjs from "dayjs";
+import { DatePicker } from "library-date-react";
 import "./create.scss";
 import Header from "../components/Header";
-
+ 
 Modal.setAppElement("#root");
 
 const EmployeeForm = () => {
@@ -108,12 +105,18 @@ const EmployeeForm = () => {
     employees.push(employee);
     localStorage.setItem("employees", JSON.stringify(employees));
     setConfirmationModal(true);
-
-    // Rediriger vers la route '/' après 2 secondes
     setTimeout(() => {
       setConfirmationModal(false);
       window.location.href = "/";
     }, 1000);
+  };
+
+  const handleDateBirthSelect = () => {
+    setDateOfBirth(); 
+  };
+ 
+  const handleDateStartSelect = () => {
+    setStartDate();  
   };
   return (
     <>
@@ -143,28 +146,15 @@ const EmployeeForm = () => {
                 />
               </div>
               <div className="dates">
+            
                 <label htmlFor="date-of-birth">Date of Birth</label>
-                <LocalizationProvider dateAdapter={AdapterDayjs}>
-                <DatePicker
-  value={dateOfBirth ? dayjs(dateOfBirth) : null}
-  onChange={(date) => setDateOfBirth(date)}
-  format="MM/DD/YYYY" // Ajoutez ceci pour afficher la date au format désiré
-/>
-
-                </LocalizationProvider>
+                <DatePicker onSelectDate={handleDateBirthSelect} />
               </div>
 
               <div className="dates">
                 <label htmlFor="start-date">Start Date</label>
-                <LocalizationProvider dateAdapter={AdapterDayjs}>
-                <DatePicker
-  value={startDate ? dayjs(startDate) : null}
-  onChange={(date) => setStartDate(date)}
-  format="MM/DD/YYYY" // Ajoutez ceci pour afficher la date au format désiré
-/>
-
-                </LocalizationProvider>
-              </div>
+                <DatePicker onSelectDate={handleDateStartSelect} />
+              </div> 
             </div>
             <div className="separator"></div>
 
