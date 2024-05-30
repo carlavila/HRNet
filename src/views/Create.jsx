@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Modal from "react-modal";
 import { useDispatch, useSelector } from "react-redux";
 import {
   updateField,
@@ -19,7 +18,7 @@ import SelectOptions, {
 } from "../components/Form/SelectOptions";
 import ZipCodeInput from "../components/Form/ZipCodeInput";
 import Dates from "../components/Form/Dates";
-import Illustration from "../assets/illustration2.jpg";
+import Illustration from "../assets/illustration2.png";
 
 
 
