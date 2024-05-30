@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import {
   Table,
   TableBody,
@@ -11,41 +11,48 @@ import {
   TableSortLabel,
   TablePagination,
 } from "@mui/material";
+import { useSelector, useDispatch } from 'react-redux';
+import { updateField } from '../redux/employeeSlice'; // Assurez-vous du bon chemin
 import "./employees.scss";
 import Header from "../components/Header";
 
 const EmployeeTable = () => {
-  const [employees, setEmployees] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [orderBy, setOrderBy] = useState("");
-  const [order, setOrder] = useState("asc");
-  const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+  const dispatch = useDispatch();
+  const employees = useSelector(state => state.employee.employees || []);
+  const searchTerm = useSelector(state => state.employee.searchTerm); 
+  const orderBy = useSelector(state => state.employee.orderBy);
+  const order = useSelector(state => state.employee.order);
+  const page = useSelector(state => state.employee.page);
+  const rowsPerPage = useSelector(state => state.employee.rowsPerPage);
 
   useEffect(() => {
     const employeesData = JSON.parse(localStorage.getItem("employees")) || [];
-    setEmployees(employeesData);
-  }, []);
+    dispatch(updateField({ field: 'employees', value: employeesData }));
+  }, [dispatch]);
+  
 
   const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(event.target.value);
-    setPage(0);
+    dispatch(updateField({ field: 'rowsPerPage', value: event.target.value }));
+    dispatch(updateField({ field: 'page', value: 0 }));
   };
 
   const handleChangePage = (event, newPage) => {
-    setPage(newPage);
+    dispatch(updateField({ field: 'page', value: newPage }));
   };
 
   const handleRequestSort = (property) => {
     const isAsc = orderBy === property && order === "asc";
-    setOrder(isAsc ? "desc" : "asc");
-    setOrderBy(property);
+    dispatch(updateField({ field: 'order', value: isAsc ? "desc" : "asc" }));
+    dispatch(updateField({ field: 'orderBy', value: property }));
   };
 
   const filteredEmployees = employees.filter((employee) =>
-    Object.values(employee).some((value) =>
-      value.toLowerCase().includes(searchTerm.toLowerCase())
-    )
+    Object.values(employee).some((value) => {
+      if (typeof value === 'string') {
+        return value.toLowerCase().includes(searchTerm.toLowerCase());
+      }
+      return false; // Ignore non-string values
+    })
   );
 
   const sortedEmployees = filteredEmployees.sort((a, b) => {
@@ -68,7 +75,7 @@ const EmployeeTable = () => {
             variant="outlined"
             label="Search"
             value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
+            onChange={(e) => dispatch(updateField({ field: 'searchTerm', value: e.target.value }))}
           />
         </div>
         <div style={{ maxHeight: "500px", overflowY: "scroll" }}>

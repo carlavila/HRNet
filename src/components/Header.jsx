@@ -17,7 +17,7 @@ export default function Header() {
       <nav>
         {location.pathname === "/create" && (
           <NavLink to="/">
-            <span>Employees</span>
+            <span> View of employees</span>
           </NavLink>
         )}
         {location.pathname === "/" && (

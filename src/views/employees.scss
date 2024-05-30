@@ -1,6 +1,7 @@
 @import "../utils/variables.scss";
 
 .contain-employees {
+  margin-top: 5em;
   margin-left: 2em;
   margin-right: 2em;
 
@@ -52,7 +53,6 @@
 
   .title {
     font-size: 20px;
-    padding-top: 0.5em;
     text-align: center;
     color: $color-white;
   }
