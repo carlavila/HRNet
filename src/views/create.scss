@@ -158,3 +158,21 @@ h2 {
     font-weight: 400;
     font-style: normal;
 }
+
+@media screen and (max-width: 1000px) {
+  #container {
+    width: 900px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  #container {
+    width: 800px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #container {
+    width: 100%;
+  }
+}
