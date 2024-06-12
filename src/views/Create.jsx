@@ -18,7 +18,6 @@ import SelectOptions, {
 } from "../components/Form/SelectOptions";
 import ZipCodeInput from "../components/Form/ZipCodeInput";
 import Dates from "../components/Form/Dates";
-import Illustration from "../assets/illustration2.png";
 
 
 
@@ -79,19 +78,12 @@ const EmployeeForm = () => {
 
   return (
     <>
-      <Header />
+      <Header /> 
       <div id="container">
         <form id="form_create">
           <div className="formulaire">
-            <div className="illustration-bloc">
-              <img
-                className="illustration"
-                src={Illustration}
-                alt={"Wealth Health logo"}
-              />
-            </div>
+           
             <div className="bloc-create">
-              <div className="create-employee">
                 <div className="infos-user">
                   <h2>Informations</h2>
                   <FirstNameInput
@@ -183,12 +175,12 @@ const EmployeeForm = () => {
                       clearError={() => dispatch(clearError("department"))}
                     />
                   </div>
-                </div>
               </div>
-              <button type="button" className="button" onClick={saveEmployee}>
+             
+            </div>
+            <button type="button" className="button" onClick={saveEmployee}>
                 Save
               </button>
-            </div>
           </div>
           {confirmationVisible && ( // Affichage conditionnel de la div de confirmation
             <div className="modal">Employee Created!</div>

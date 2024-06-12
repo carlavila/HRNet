@@ -82,6 +82,7 @@ const SelectOptions = ({ placeholder, options, value, onChange, errors, clearErr
   return (
     <div>
       <Select
+        className="select"
         placeholder={placeholder}
         options={options}
         value={value}

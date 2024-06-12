@@ -72,6 +72,7 @@ const EmployeeTable = () => {
       <div className="contain-employees">
         <div className="bloc-search">
           <TextField
+          className="texfield"
             variant="outlined"
             label="Search"
             value={searchTerm}

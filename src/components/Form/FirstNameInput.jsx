@@ -8,7 +8,7 @@ const FirstNameInput = ({ firstName, setFirstName, errors, clearError }) => {
 
   return (
     <div className="input">
-      <label htmlFor="first-name">First Name</label>
+      <label for="first-name">First Name</label>
       <input
         type="text"
         id="first-name"

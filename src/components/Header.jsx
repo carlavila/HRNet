@@ -9,25 +9,25 @@ export default function Header() {
   return (
     <header>
       <div className="logo--container">
-        <NavLink to="/create">
-          <img className="logo" src={Logo} alt={"Wealth Health logo"} />
+        <NavLink to="/create" title="Go to HRnet Home">
+          <img
+            className="logo"
+            src={Logo}
+            alt="Wealth Health logo"
+          />
         </NavLink>
       </div>
       <h1>HRnet</h1>
       <nav>
         {location.pathname === "/create" && (
-          <NavLink to="/">
-            <span> View of employees</span>
+          <NavLink to="/" title="View the list of employees">
+            <span>View of employees</span>
           </NavLink>
         )}
         {location.pathname === "/" && (
-          <button
-            type="button"
-            className="button-create"
-            onClick={() => (window.location.href = "/create")}
-          >
+          <NavLink to="/create" title="Create a new employee" className="button-create">
             Create a new employee
-          </button>
+          </NavLink>
         )}
       </nav>
     </header>

@@ -13,12 +13,18 @@
     padding-bottom: 0.5em;
     padding-top: 0.5em;
 
+   .MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-style: normal;
+    }
+
     .entries {
       display: flex;
       flex-direction: column;
       label {
-	font-size: 13px;
-	padding-bottom: 5px;
+        font-size: 13px;
+        padding-bottom: 5px;
       }
     }
     #rows-per-page-select,
@@ -49,6 +55,7 @@
     .MuiInputBase-input {
       padding-top: 10px;
     }
+
   }
 
   .title {
@@ -57,15 +64,30 @@
     color: $color-white;
   }
 
-  .p-results{
+  .p-results {
     font-size: 12px;
   }
 
-  .css-1ygcj2i-MuiTableCell-root{
+  .css-1ygcj2i-MuiTableCell-root {
     font-weight: bold;
-    padding:10px;
+    padding: 10px;
   }
-  .css-1ex1afd-MuiTableCell-root{
+  .css-1ex1afd-MuiTableCell-root {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 13px;
+  }
+  .css-1qgma8u-MuiButtonBase-root-MuiTableSortLabel-root {
+    font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  }
+
+  .css-pdct74-MuiTablePagination-selectLabel, .css-194a1fa-MuiSelect-select-MuiInputBase-input, .css-levciy-MuiTablePagination-displayedRows {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     font-size: 13px;
   }
 }

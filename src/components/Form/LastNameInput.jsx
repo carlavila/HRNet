@@ -9,7 +9,7 @@ const LastNameInput = ({ lastName, setLastName, errors, clearError }) => {
 
   return (
     <div className="input">
-      <label htmlFor="last-name">Last Name</label>
+      <label for="last-name">Last Name</label>
       <input
         type="text"
         id="last-name"

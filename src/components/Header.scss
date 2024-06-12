@@ -1,86 +1,86 @@
 @import "../utils/variables.scss";
 
 header {
-	position: fixed;
-	top: 20px;
-	left: 0;
-	width: 100%;
-	z-index: 1000;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	height: 60px; /* Hauteur réduite du header */
-	padding: 0.5em 6em; /* Ajustement du padding */
-	margin: 0; /* Supprime les marges pour un positionnement fixe */
-      
-	.logo--container {
-	  display: flex;
-	  align-items: center;
-	}
-      
-	.logo {
-	  width: 4rem; /* Taille du logo ajustée */
-	  height: auto;
-	  @media (max-width: 767px) {
-	    width: 3rem;
-	  }
-	}
-      
-	h1 {
-	  color: $primary-color-dark;
-	  font-size: 1.5rem; /* Taille du texte ajustée si nécessaire */
-	}
-      
-	nav {
-	  display: flex;
-	  align-items: center; /* Aligner les éléments verticalement */
-	  gap: 0.5rem; /* Réduit l'espacement entre les éléments */
-      
-	  a {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.25rem; /* Réduction de l'espacement interne des liens */
-		text-decoration: none;
-		font-size:14px;
-		padding: 10px 15px; /* Réduit le padding pour les liens */
-		border-radius: 5px;
-	  background-color: #92aa96;
-	  color: white;
-	  border: none;
-	  cursor: pointer;
-	  font-weight: bold;
-      
-	    .menu-icon {
-	      width: 1rem; /* Taille des icônes ajustée */
-	      height: 1rem;
-	      @media (max-width: 767px) {
-		width: 0.875rem;
-		height: 0.875rem;
-	      }
-	    }
-      
-	    span {
-	      @media (max-width: 767px) {
-		font-size: 0.875rem;
-	      }
-	    }
-	  }
-	}
-      
-	.button-create {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.25rem; /* Réduction de l'espacement interne des liens */
-		text-decoration: none;
-		font-size:14px;
-		padding: 10px 15px; /* Réduit le padding pour les liens */
-		border-radius: 5px;
-	  background-color: #92aa96;
-	  color: $color-white;
-	  border: none;
-	  cursor: pointer;
-	  font-weight: bold;
-	}
+  position: fixed;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px; /* Hauteur réduite du header */
+  padding: 0.5em 6em; /* Ajustement du padding */
+  margin: 0; /* Supprime les marges pour un positionnement fixe */
+.logo {
+  width:80px;
+}
+  .logo--container {
+    display: flex;
+    align-items: center;
+  }
+
+  h1 {
+    color: $primary-color-dark;
+    font-size: 1.5rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  nav {
+    display: flex;
+    align-items: center; /* Aligner les éléments verticalement */
+    gap: 0.5rem; /* Réduit l'espacement entre les éléments */
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem; /* Réduction de l'espacement interne des liens */
+      text-decoration: none;
+      font-size: 14px;
+      padding:10px  5px ; /* Réduit le padding pour les liens */
+      border-radius: 5px;
+      background-color: #6e8672;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-style: normal;
+
+      .menu-icon {
+        width: 1rem; /* Taille des icônes ajustée */
+        height: 1rem;
+        @media (max-width: 767px) {
+          width: 0.875rem;
+          height: 0.875rem;
+        }
       }
-      
+
+      span {
+        @media (max-width: 767px) {
+          font-size: 0.875rem;
+        }
+      }
+    }
+  }
+
+  .button-create {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem; 
+    text-decoration: none;
+    font-size: 14px;
+    padding:10px 5px ;
+    border-radius: 5px;
+    background-color: #6e8672;
+    color: $color-white;
+    border: none;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+}

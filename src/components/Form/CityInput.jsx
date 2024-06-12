@@ -7,7 +7,7 @@ const CityInput = ({ city, setCity, errors, clearError }) => {
   };
   return (
     <div className="bloc_adress">
-      <label htmlFor="city">City</label>
+      <label for="city">City</label>
       <input
         id="city"
         type="text"

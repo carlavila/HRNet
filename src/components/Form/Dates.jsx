@@ -4,7 +4,7 @@ import { DatePicker } from "library-date-react";
 const Dates = ({ label, selectedDate, onSelectDate, error }) => {
   return (
     <div className="dates">
-      <label htmlFor={label}>{label}</label>
+      <label for={label}>{label}</label>
       <DatePicker
         selectedDate={selectedDate}
         onSelectDate={onSelectDate}

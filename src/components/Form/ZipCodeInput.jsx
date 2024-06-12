@@ -9,7 +9,7 @@ const ZipCodeInput = ({ zipCode, setZipCode, errors, clearError  }) => {
   };
   return (
     <div className="bloc_adress">
-      <label htmlFor="zip-code">Zip Code</label>
+      <label for="zip-code">Zip Code</label>
       <input
         id="zip-code"
         type="number"

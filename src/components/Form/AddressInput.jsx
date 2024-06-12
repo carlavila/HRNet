@@ -8,7 +8,7 @@ const AddressInput = ({ street, setStreet, errors, clearError }) => {
 
   return (
     <div className="bloc_adress">
-      <label htmlFor="street">Street</label>
+      <label for="street">Street</label>
       <input
         id="street"
         type="text"
